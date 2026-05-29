@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anomalus Project</title>
+    <!-- Tambahkan link ke library ikon jika diperlukan, contoh: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Mengatur latar belakang layar penuh (abu-abu kebiruan) */
         body {
@@ -11,6 +13,10 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         /* Mengatur area putih di tengah (Kertas utama) */
@@ -18,22 +24,19 @@
             background-color: #ffffff;
             width: 100%;
             max-width: 600px; /* Lebar maksimal container putih */
-            min-height: 100vh; /* Memastikan tingginya full layar */
-            margin: 0 auto; /* Posisi di tengah layar */
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Mengatur semua elemen ke tengah */
-            padding: 60px 20px;
+            padding: 60px 40px;
             box-sizing: border-box;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sedikit bayangan di sisi kiri kanan */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+            text-align: center;
+            border-radius: 8px; /* Sudut sedikit membulat */
         }
 
         /* Mengatur logo */
         .logo {
             width: 100%;
-            max-width: 350px; /* Sesuaikan ukuran logo */
+            max-width: 300px; /* Sesuaikan ukuran logo */
             height: auto;
-            margin-bottom: 50px; /* Jarak antara logo dan tombol pertama */
+            margin-bottom: 40px; /* Jarak antara logo dan tombol pertama */
         }
 
         /* Mengatur desain tombol (Button) */
@@ -44,8 +47,7 @@
             background-color: #d7d8dc; /* Warna abu-abu terang tombol */
             color: #2f447a; /* Warna teks biru gelap/ungu */
             padding: 16px 20px;
-            margin-bottom: 18px; /* Jarak antar tombol */
-            text-align: center;
+            margin: 0 auto 18px auto; /* Jarak antar tombol dan tengahkan */
             text-decoration: none; /* Menghilangkan garis bawah pada link */
             border-radius: 25px; /* Membuat ujung tombol membulat (pill shape) */
             font-size: 16px;
@@ -58,6 +60,35 @@
         .button:hover {
             background-color: #c2c4c9; /* Warna tombol sedikit menggelap saat di-hover */
             transform: scale(1.02); /* Membesar sedikit untuk efek interaktif */
+        }
+
+        /* Bagian bawah */
+        .footer {
+            margin-top: 40px;
+            color: #2f447a;
+        }
+
+        .find-us {
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Jarak antar ikon */
+            font-size: 24px;
+        }
+
+        .social-icons a {
+            color: #2f447a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1a2a5a; /* Warna ikon saat di-hover */
         }
     </style>
 </head>
@@ -73,6 +104,18 @@
         <a href="#" class="button">What We've Done So Far</a>
         <a href="#" class="button">Get To Know VERSA</a>
         <a href="#" class="button">FAQ</a>
+
+        <!-- Bagian bawah -->
+        <div class="footer">
+            <p class="find-us">Find Us Here:</p>
+            <div class="social-icons">
+                <!-- Ganti '#' dengan link media sosial Anda -->
+                <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" title="Twitter / X"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
     </div>
 
 </body>
