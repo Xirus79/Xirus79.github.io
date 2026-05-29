@@ -3,102 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul yang akan muncul di tab browser kamu -->
     <title>Anomalus Project</title>
     
-    <!-- Google Fonts: Import Montserrat dan Agbalumo -->
+    <!-- MENGAMBIL FONT DARI GOOGLE FONTS -->
+    <!-- Jika ingin ganti font, kamu bisa cari di fonts.google.com dan ganti link di bawah ini -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome versi 6.5.1 terbaru -->
+    <!-- MENGAMBIL IKON MEDIA SOSIAL (FONT AWESOME TERBARU) -->
+    <!-- Dibutuhkan agar logo X, Instagram, dll bisa muncul -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* Latar belakang layar penuh */
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG (BACKGROUND) 
+           ========================================= */
         body {
+            /* Warna latar belakang paling luar (Abu-abu kebiruan) */
             background-color: #939fb5; 
+            
+            /* Margin 0 menghapus jarak bawaan browser agar penuh */
             margin: 0;
-            padding: 50px 20px; /* Jarak aman agar kotak tidak menempel di tepi atas/bawah layar */
+            
+            /* Angka 50px adalah jarak aman atas & bawah layar agar kotak tidak menempel ke tepi browser */
+            padding: 50px 20px; 
+            
+            /* Font dasar untuk semua tulisan di web ini */
             font-family: 'Montserrat', sans-serif; 
+            
+            /* Tiga baris di bawah ini berfungsi memosisikan kotak putih agar pas di tengah layar */
             display: flex;
             justify-content: center;
-            align-items: center; /* Memastikan kotak selalu di tengah vertikal */
+            align-items: center; 
+            
+            /* Memastikan tinggi background setidaknya menutupi seluruh tinggi layar device */
             min-height: 100vh;
             box-sizing: border-box;
         }
 
-        /* CONTAINER UTAMA (KOTAK PUTIH) */
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH (CONTAINER UTAMA)
+           ========================================= */
         .container {
+            /* Warna kotak utama (Putih) */
             background-color: #ffffff;
+            
             width: 100%;
-            max-width: 500px; /* Ukuran lebar yang paling identik dengan Carrd standar */
-            padding: 50px 0; /* Padding vertikal (atas-bawah). Padding horizontal diatur oleh margin elemen di dalamnya */
-            border-radius: 12px; /* Sudut sedikit membulat */
+            
+            /* INI PENTING: Batas maksimal kelebaran kotak putih. 
+               - Jika ingin kotak lebih KECIL/SEMPIT, turunkan angkanya (misal: 400px)
+               - Jika ingin kotak lebih LEBAR, naikkan angkanya (misal: 600px) */
+            max-width: 700px; 
+            
+            /* Angka 50px mengatur ruang kosong (padding) di dalam kotak bagian atas dan bawah. 
+               Semakin besar angkanya, kotak akan semakin memanjang ke bawah. */
+            padding: 20px 0; 
+            
+            /* Mengatur tingkat kelengkungan sudut kotak putih. 
+               - Ubah jadi 0px jika ingin sudut lancip. 
+               - Besarkan angkanya jika ingin lebih membulat. */
+            border-radius: 12px; 
+            
+            /* Membuat efek bayangan tipis di sekeliling kotak putih */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            
+            /* Memastikan semua isi kotak otomatis berada di rata tengah (center) */
             text-align: center;
             box-sizing: border-box;
         }
 
-        /* LOGO */
+        /* =========================================
+           3. PENGATURAN LOGO 
+           ========================================= */
         .logo {
             display: block;
-            width: 60%; /* Lebar logo proporsional 60% dari kotak */
+            
+            /* INI PENTING: Menentukan kelebaran logo relatif terhadap kotak putih.
+               - Jika logo kurang besar, naikkan ke 70% atau 80%.
+               - Jika logo terlalu besar, turunkan ke 50%. */
+            width: 60%; 
+            
+            /* Batas aman agar di layar besar logo tidak pecah */
             max-width: 300px; 
             height: auto;
-            margin: 0 auto 35px auto; /* Tengahkan logo dan beri jarak 35px dengan tombol pertama */
+            
+            /* Mengatur posisi dan jarak logo:
+               - auto kiri & kanan = agar logo ke tengah.
+               - 35px = Jarak dari logo ke tombol pertama di bawahnya. (Ubah jika kurang jauh) */
+            margin: 0 auto 15px auto; 
         }
 
-        /* TOMBOL (BUTTONS) */
+        /* =========================================
+           4. PENGATURAN TOMBOL (BUTTONS) 
+           ========================================= */
         .button {
             display: block;
-            width: 75%; /* Lebar tombol 75% dari kotak (menyisakan ruang seimbang di kiri dan kanan) */
-            margin: 0 auto 16px auto; /* Tengahkan tombol dan beri jarak antar tombol */
+            
+            /* INI PENTING: Mengatur panjang tombol. 
+               - 75% berarti tombol mengambil 75% lebar kotak putih (ada sisa ruang kosong di kiri-kanan).
+               - Jika ingin tombol lebih PENDEK, ubah ke 60%.
+               - Jika ingin tombol PANJANG mentok kiri-kanan, ubah ke 90% atau 100%. */
+            width: 50%; 
+            
+            /* Angka 16px adalah jarak antar tombol satu dengan tombol di bawahnya */
+            margin: 0 auto 16px auto; 
+            
             box-sizing: border-box;
+            
+            /* Warna latar belakang tombol (Abu-abu) */
             background-color: #d7d8dc; 
-            color: #2f447a; 
-            padding: 16px 0; /* Mengatur ketebalan tombol atas dan bawah */
+            
+            /* Warna teks di dalam tombol (Biru Dongker) */
+            color: #1D357F; 
+            
+            /* Mengatur ketebalan tombol (jarak teks ke batas atas-bawah tombol) */
+            padding: 16px 0; 
+            
             text-decoration: none; 
-            border-radius: 30px; /* Bentuk kapsul oval sempurna */
+            
+            /* Mengatur kelengkungan tombol. 
+               - 30px membuat ujungnya melingkar sempurna (kapsul). 
+               - Ubah jadi 8px jika ingin tombol berbentuk kotak biasa. */
+            border-radius: 10px; 
+            
+            /* Ukuran font di dalam tombol */
             font-size: 15px;
+            
+            /* Ketebalan font (500 = medium, 700 = tebal/bold) */
             font-weight: 500;
             letter-spacing: 0.5px;
+            
+            /* Membuat animasi perubahan warna saat kursor diarahkan menjadi mulus */
             transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
-        /* Efek hover tombol */
+        /* EFEK SAAT TOMBOL DISENTUH/HOVER */
         .button:hover {
+            /* Warna tombol berubah lebih gelap saat di-hover */
             background-color: #c2c4c9; 
+            /* Tombol membesar sedikit (1.02 kali) sebagai interaksi */
             transform: scale(1.02); 
         }
 
-        /* FOOTER (BAGIAN BAWAH) */
+        /* =========================================
+           5. PENGATURAN AREA BAWAH (MEDIA SOSIAL) 
+           ========================================= */
         .footer {
-            margin-top: 35px;
+            /* Angka 35px adalah jarak antara tombol paling bawah dengan teks "Find Us Here:" */
+            margin-top: 20px;
             color: #1D357F;
         }
 
-        /* Teks "Find Us Here:" */
+        /* Khusus teks "Find Us Here:" */
         .find-us {
+            /* Menggunakan font custom Agbalumo */
             font-family: 'Agbalumo', system-ui;
+            
+            /* Ukuran teksnya */
             font-size: 22px; 
+            
+            /* Jarak antara tulisan ini dengan deretan logo medsos di bawahnya */
             margin: 0 0 15px 0;
             font-weight: normal; 
         }
 
-        /* Ikon Media Sosial */
+        /* Tempat berkumpulnya ikon logo (Container Sosial) */
         .social-icons {
             display: flex;
             justify-content: center;
+            
+            /* Angka 20px adalah jarak kelebaran antar satu ikon dengan ikon lainnya */
             gap: 20px; 
+            
+            /* Ukuran besarnya logo sosial media */
             font-size: 28px; 
         }
 
+        /* Warna dasar ikon sosial media */
         .social-icons a {
             color: #1D357F;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
+        /* Warna ikon sosial media saat disentuh/hover */
         .social-icons a:hover {
             color: #1a2a5a; 
         }
@@ -107,26 +197,33 @@
 <body>
 
     <div class="container">
-        <!-- Logo -->
+        
+        <!-- BAGIAN LOGO -->
+        <!-- Pastikan nama 'logo.png' sama persis dengan nama file gambarmu di GitHub (huruf besar/kecil berpengaruh) -->
         <img src="logo.png" alt="Anomalus Project Logo" class="logo">
         
-        <!-- Tombol-tombol -->
+        <!-- BAGIAN TOMBOL -->
+        <!-- Ganti tanda '#' di dalam href="..." dengan link tujuan kamu -->
+        <!-- Ganti teks putih di antara tag >< dengan nama menu kamu -->
         <a href="#" class="button">About Anomalus Project</a>
         <a href="#" class="button">RULES</a>
         <a href="#" class="button">What We've Done So Far</a>
         <a href="#" class="button">Get To Know VERSA</a>
         <a href="#" class="button">FAQ</a>
 
-        <!-- Footer -->
+        <!-- BAGIAN FOOTER & MEDIA SOSIAL -->
         <div class="footer">
             <p class="find-us">Find Us Here:</p>
             <div class="social-icons">
+                <!-- href="..." adalah link medsos kamu -->
+                <!-- class="fab fa-..." adalah kode dari Font Awesome untuk memunculkan logonya -->
                 <a href="https://discord.gg/9WRfV4uVv8" title="Discord"><i class="fab fa-discord"></i></a>
                 <a href="https://www.instagram.com/anomalusproject" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@anomalusproject" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 <a href="https://x.com/AnomalusProject" title="X"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
         </div>
+        
     </div>
 
 </body>
