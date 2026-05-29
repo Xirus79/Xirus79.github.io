@@ -18,11 +18,11 @@
         body {
             background-color: #939fb5; 
             margin: 0;
-            padding: 40px 20px; 
+            padding: 50px 20px; /* Jarak aman agar kotak tidak menempel di tepi atas/bawah layar */
             font-family: 'Montserrat', sans-serif; 
             display: flex;
             justify-content: center;
-            align-items: center; 
+            align-items: center; /* Memastikan kotak selalu di tengah vertikal */
             min-height: 100vh;
             box-sizing: border-box;
         }
@@ -31,44 +31,35 @@
         .container {
             background-color: #ffffff;
             width: 100%;
-            /* KUNCI: Lebar maksimal dikecilkan agar seukuran Carrd (Sempit namun pas) */
-            max-width: 550px; 
-            
-            /* Jarak dalam kotak: Atas 60, Kanan/Kiri 45, Bawah 40 */
-            padding: 60px 45px 40px 45px; 
-            
-            box-sizing: border-box;
+            max-width: 500px; /* Ukuran lebar yang paling identik dengan Carrd standar */
+            padding: 50px 0; /* Padding vertikal (atas-bawah). Padding horizontal diatur oleh margin elemen di dalamnya */
+            border-radius: 12px; /* Sudut sedikit membulat */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-            border-radius: 8px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
         }
 
         /* LOGO */
         .logo {
-            width: 100%;
-            /* KUNCI: Logo dibuat mendominasi lebar kotak putih */
-            max-width: 85%; 
+            display: block;
+            width: 60%; /* Lebar logo proporsional 60% dari kotak */
+            max-width: 300px; 
             height: auto;
-            margin-bottom: 45px; 
+            margin: 0 auto 35px auto; /* Tengahkan logo dan beri jarak 35px dengan tombol pertama */
         }
 
         /* TOMBOL (BUTTONS) */
         .button {
             display: block;
-            /* KUNCI: Lebar tombol dipaksa 100% membentang memenuhi kotak */
-            width: 100%; 
+            width: 75%; /* Lebar tombol 75% dari kotak (menyisakan ruang seimbang di kiri dan kanan) */
+            margin: 0 auto 16px auto; /* Tengahkan tombol dan beri jarak antar tombol */
             box-sizing: border-box;
-            
             background-color: #d7d8dc; 
             color: #2f447a; 
-            padding: 16px 20px;
-            margin-bottom: 18px; 
+            padding: 16px 0; /* Mengatur ketebalan tombol atas dan bawah */
             text-decoration: none; 
-            text-align: center; /* Teks dipastikan di tengah */
-            border-radius: 30px; /* Bentuk kapsul/oval sempurna */
-            font-size: 16px;
+            border-radius: 30px; /* Bentuk kapsul oval sempurna */
+            font-size: 15px;
             font-weight: 500;
             letter-spacing: 0.5px;
             transition: background-color 0.3s ease, transform 0.1s ease;
@@ -82,17 +73,15 @@
 
         /* FOOTER (BAGIAN BAWAH) */
         .footer {
-            margin-top: 30px;
+            margin-top: 35px;
             color: #1D357F;
-            text-align: center;
         }
 
         /* Teks "Find Us Here:" */
         .find-us {
             font-family: 'Agbalumo', system-ui;
-            font-size: 26px; 
-            margin-top: 0;
-            margin-bottom: 15px;
+            font-size: 22px; 
+            margin: 0 0 15px 0;
             font-weight: normal; 
         }
 
@@ -101,7 +90,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; 
-            font-size: 32px; 
+            font-size: 28px; 
         }
 
         .social-icons a {
