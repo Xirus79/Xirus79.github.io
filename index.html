@@ -10,97 +10,98 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome versi terbaru (6.5.1) agar logo X resmi muncul -->
+    <!-- Font Awesome versi 6.5.1 terbaru -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* Mengatur latar belakang layar penuh (abu-abu kebiruan) */
+        /* Latar belakang layar penuh */
         body {
             background-color: #939fb5; 
             margin: 0;
-            /* Jarak aman di luar kotak agar tidak menempel di HP */
             padding: 40px 20px; 
             font-family: 'Montserrat', sans-serif; 
             display: flex;
             justify-content: center;
-            align-items: center; /* Pusat kotak secara vertikal */
+            align-items: center; 
             min-height: 100vh;
             box-sizing: border-box;
         }
 
-        /* INI ADALAH KUNCI UNTUK BENTUK KOTAK PERSEGI */
+        /* CONTAINER UTAMA (KOTAK PUTIH) */
         .container {
             background-color: #ffffff;
             width: 100%;
-            /* Atur lebar dan tinggi tertentu untuk memaksa bentuk persegi */
-            max-width: 800px; /* Lebar optimal */
-            min-height: 750px; /* Tinggi yang dikunci agar kotak terlihat persegi */
+            /* KUNCI: Lebar maksimal dikecilkan agar seukuran Carrd (Sempit namun pas) */
+            max-width: 550px; 
             
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* Jarak internal yang seimbang (Atas 60, Kanan/Kiri 40, Bawah 30) */
-            padding: 60px 40px 30px 40px; 
+            /* Jarak dalam kotak: Atas 60, Kanan/Kiri 45, Bawah 40 */
+            padding: 60px 45px 40px 45px; 
             
             box-sizing: border-box;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-            text-align: center;
-            /* Berikan sedikit kelembutan pada sudut kotak persis seperti Carrd */
             border-radius: 8px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Mengatur logo: Lebih besar dan proporsional */
+        /* LOGO */
         .logo {
             width: 100%;
-            max-width: 450px; /* Logo diperbesar agar setara dengan Carrd */
+            /* KUNCI: Logo dibuat mendominasi lebar kotak putih */
+            max-width: 85%; 
             height: auto;
-            margin-bottom: 30px; /* Jarak antara logo dan tombol pertama */
+            margin-bottom: 45px; 
         }
 
-        /* Mengatur desain tombol: Lebih lebar */
+        /* TOMBOL (BUTTONS) */
         .button {
             display: block;
-            width: 100%;
-            max-width: 400px; /* Tombol dilebarkan agar proporsional di dalam kotak persegi */
+            /* KUNCI: Lebar tombol dipaksa 100% membentang memenuhi kotak */
+            width: 100%; 
+            box-sizing: border-box;
+            
             background-color: #d7d8dc; 
             color: #2f447a; 
             padding: 16px 20px;
-            margin: 0 auto 18px auto; 
+            margin-bottom: 18px; 
             text-decoration: none; 
-            border-radius: 30px; /* Ujung tombol dibuat lebih membulat (pill shape) */
-            font-size: 17px;
+            text-align: center; /* Teks dipastikan di tengah */
+            border-radius: 30px; /* Bentuk kapsul/oval sempurna */
+            font-size: 16px;
             font-weight: 500;
             letter-spacing: 0.5px;
             transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
-        /* Efek saat tombol disentuh */
+        /* Efek hover tombol */
         .button:hover {
             background-color: #c2c4c9; 
             transform: scale(1.02); 
         }
 
-        /* Bagian footer: Dibuat lebih besar dan diposisikan ke bawah kotak */
+        /* FOOTER (BAGIAN BAWAH) */
         .footer {
-            margin-top: auto; /* Ini otomatis mendorong Footer ke bagian bawah kotak persegi */
+            margin-top: 30px;
             color: #1D357F;
-            padding-top: 30px;
+            text-align: center;
         }
 
-        /* Khusus teks "Find Us Here:": Lebih besar */
+        /* Teks "Find Us Here:" */
         .find-us {
             font-family: 'Agbalumo', system-ui;
-            font-size: 26px; /* Text diperbesar agar terbaca jelas */
+            font-size: 26px; 
+            margin-top: 0;
             margin-bottom: 15px;
             font-weight: normal; 
         }
 
-        /* Ikon sosial: Lebih besar dan jarak lebih luas */
+        /* Ikon Media Sosial */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Jarak antar ikon */
-            font-size: 32px; /* Ikon sosial diperbesar */
+            gap: 20px; 
+            font-size: 32px; 
         }
 
         .social-icons a {
@@ -112,40 +113,30 @@
         .social-icons a:hover {
             color: #1a2a5a; 
         }
-
-        /* Opsional: Teks kecil di paling bawah */
-        .credits {
-            font-size: 10px;
-            color: #ccc;
-            margin-top: 30px;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Ganti 'logo.png' dengan nama file logo kamu -->
+        <!-- Logo -->
         <img src="logo.png" alt="Anomalus Project Logo" class="logo">
         
-        <!-- Tombol Utama -->
+        <!-- Tombol-tombol -->
         <a href="#" class="button">About Anomalus Project</a>
         <a href="#" class="button">RULES</a>
         <a href="#" class="button">What We've Done So Far</a>
         <a href="#" class="button">Get To Know VERSA</a>
         <a href="#" class="button">FAQ</a>
 
-        <!-- Bagian Footer Media Sosial -->
+        <!-- Footer -->
         <div class="footer">
             <p class="find-us">Find Us Here:</p>
             <div class="social-icons">
                 <a href="https://discord.gg/9WRfV4uVv8" title="Discord"><i class="fab fa-discord"></i></a>
                 <a href="https://www.instagram.com/anomalusproject" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="www.tiktok.com/@anomalusproject" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://x.com/AnomalusProject" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.tiktok.com/@anomalusproject" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/AnomalusProject" title="X"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            
-            <!-- Opsional: Menambahkan teks kecil di bawah ikon (atau hapus ini) -->
-            <!-- <p class="credits">( Made with Github )</p> -->
         </div>
     </div>
 
