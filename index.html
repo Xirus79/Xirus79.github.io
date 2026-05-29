@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomalus Project</title>
+    <style>
+        /* Mengatur latar belakang layar penuh (abu-abu kebiruan) */
+        body {
+            background-color: #939fb5; /* Warna background menyesuaikan gambar */
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Mengatur area putih di tengah (Kertas utama) */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px; /* Lebar maksimal container putih */
+            min-height: 100vh; /* Memastikan tingginya full layar */
+            margin: 0 auto; /* Posisi di tengah layar */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Mengatur semua elemen ke tengah */
+            padding: 60px 20px;
+            box-sizing: border-box;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sedikit bayangan di sisi kiri kanan */
+        }
+
+        /* Mengatur logo */
+        .logo {
+            width: 100%;
+            max-width: 350px; /* Sesuaikan ukuran logo */
+            height: auto;
+            margin-bottom: 50px; /* Jarak antara logo dan tombol pertama */
+        }
+
+        /* Mengatur desain tombol (Button) */
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 320px; /* Lebar tombol */
+            background-color: #d7d8dc; /* Warna abu-abu terang tombol */
+            color: #2f447a; /* Warna teks biru gelap/ungu */
+            padding: 16px 20px;
+            margin-bottom: 18px; /* Jarak antar tombol */
+            text-align: center;
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+            border-radius: 25px; /* Membuat ujung tombol membulat (pill shape) */
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        /* Efek saat tombol disentuh (Hover/Klik) */
+        .button:hover {
+            background-color: #c2c4c9; /* Warna tombol sedikit menggelap saat di-hover */
+            transform: scale(1.02); /* Membesar sedikit untuk efek interaktif */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ganti 'logo.png' dengan nama file logo kamu yang ada di GitHub -->
+        <img src="logo.png" alt="Anomalus Project Logo" class="logo">
+        
+        <!-- Ganti '#' dengan link tujuan masing-masing tombol -->
+        <a href="#" class="button">About Anomalus Project</a>
+        <a href="#" class="button">RULES</a>
+        <a href="#" class="button">What We've Done So Far</a>
+        <a href="#" class="button">Get To Know VERSA</a>
+        <a href="#" class="button">FAQ</a>
+    </div>
+
+</body>
+</html>
