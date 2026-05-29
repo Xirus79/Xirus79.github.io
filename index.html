@@ -9,28 +9,30 @@
     <style>
         /* Mengatur latar belakang layar penuh (abu-abu kebiruan) */
         body {
-            background-color: #939fb5; /* Warna background menyesuaikan gambar */
+            background-color: #939fb5; 
             margin: 0;
-            padding: 0;
+            /* Berikan padding atas dan bawah sebesar 40px pada body */
+            padding: 40px 20px; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box; /* Memastikan padding tidak merusak ukuran layar */
         }
 
-        /* Mengatur area putih di tengah (Kertas utama) */
+        /* 2. UBAH BAGIAN CONTAINER */
         .container {
             background-color: #ffffff;
-            width: 80%;
-            max-width: 800px; /* Lebar maksimal container putih */
+            width: 100%;
+            max-width: 600px; 
             padding: 60px 40px;
             box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
             text-align: center;
-            border-radius: 8px; /* Sudut sedikit membulat */
+            border-radius: 8px; 
+            /* Hapus atau jangan gunakan min-height: 100vh di sini agar kotaknya tidak dipaksa meninggi semata kaki */
         }
-
         /* Mengatur logo */
         .logo {
             width: 100%;
