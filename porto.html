@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We've Done So Far - Anomalus Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG
+           ========================================= */
+        body {
+            background-color: #939fb5; 
+            margin: 0;
+            padding: 50px 20px; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH (CONTAINER)
+           ========================================= */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 650px; /* Lebarnya dibuat pas agar proporsional */
+            padding: 70px 80px 60px 80px; /* Jarak aman dalam kotak (Kiri-Kanan cukup luas) */
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+            box-sizing: border-box;
+            text-align: left; /* Teks default rata kiri */
+        }
+
+        /* =========================================
+           3. PENGATURAN JUDUL KATEGORI
+           ========================================= */
+        .category-title {
+            color: #1a2b6d; /* Biru gelap */
+            font-size: 20px;
+            font-weight: 700; /* Tebal */
+            margin-top: 40px; /* Jarak atas dari bagian sebelumnya */
+            margin-bottom: 20px; /* Jarak bawah ke link pertama */
+            text-transform: uppercase; /* Huruf kapital semua otomatis */
+            letter-spacing: 0.5px;
+        }
+
+        /* Menghilangkan jarak atas khusus untuk judul yang posisinya paling pertama */
+        .category-title:first-child {
+            margin-top: 0;
+        }
+
+        /* =========================================
+           4. PENGATURAN LINK PORTOFOLIO
+           ========================================= */
+        .porto-link {
+            display: block; /* Agar setiap link otomatis turun ke baris baru */
+            color: #3a5084; /* Warna biru sedikit pudar */
+            font-size: 15.5px;
+            text-decoration: underline; /* Garis bawah khas link */
+            margin-bottom: 18px; /* Jarak antar link diubah agar lebih lega */
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .porto-link:hover {
+            color: #1a2b6d; /* Warna link menggelap saat disentuh kursor */
+        }
+
+        /* =========================================
+           5. PENGATURAN TOMBOL KEMBALI
+           ========================================= */
+        .back-icon {
+            display: block;
+            text-align: center; /* Ikon panah dipaksa rata tengah */
+            margin-top: 60px; /* Jarak dari link terakhir ke ikon panah */
+        }
+
+        .back-icon a {
+            color: #1a2b6d; 
+            font-size: 28px; 
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .back-icon a:hover {
+            color: #0d163b; 
+            transform: translateX(-5px); /* Animasi geser kiri sedikit saat di-hover */
+        }
+
+        /* Penyesuaian untuk layar HP agar teks tidak terlalu mepet ke ujung layar */
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 40px; 
+            }
+            .category-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h2 class="category-title">VERSA's MEMBERS BDAY CELEBRATION</h2>
+        <a href="https://x.com/i/status/2005082064060809461" class="porto-link">#HatsumatsuRay</a>
+        <a href="https://x.com/i/status/2029441596069167399" class="porto-link">#ReveDeRizu</a>
+
+        <h2 class="category-title">OTHER EVENTS</h2>
+        <a href="https://x.com/i/status/1982325377419948399" class="porto-link">Debut Anniversary</a>
+        <a href="https://x.com/i/status/1993965103281262780" class="porto-link">Charity</a>
+        <a href="https://x.com/i/status/2057296894729265368" class="porto-link">#UNIVERSONA</a>
+        <a href="https://x.com/i/status/2043606434471133264" class="porto-link">#UNIVERSA Logo</a>
+
+        <h2 class="category-title">CONTENTS</h2>
+        <a href="https://x.com/i/status/2054168215803367924" class="porto-link">#VERSApedia</a>
+        <a href="https://x.com/i/status/2033666141726642278" class="porto-link">#VERTRIVIA</a>
+
+        <div class="back-icon">
+            <a href="index.html" title="Kembali ke Menu Utama"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+    </div>
+
+</body>
+</html>
