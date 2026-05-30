@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules - Anomalus Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG
+           ========================================= */
+        body {
+            background-color: #939fb5; 
+            margin: 0;
+            padding: 50px 20px; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH (CONTAINER)
+           ========================================= */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px; /* Lebar kotak diatur agar tabel muat */
+            padding: 60px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           3. PENGATURAN JUDUL & TEKS UMUM
+           ========================================= */
+        .main-title {
+            color: #1D357F; 
+            font-size: 38px;
+            font-weight: 700; 
+            margin: 0 0 10px 0;
+        }
+
+        .sub-title {
+            color: #4a5c8c; 
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #1D357F;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .section-title-alt {
+            color: #1D357F;
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .text-content {
+            color: #2f447a;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .text-bold {
+            font-weight: 700;
+            color: #1D357F;
+        }
+
+        /* =========================================
+           4. PENGATURAN LIST DENGAN TANDA '>'
+           ========================================= */
+        .custom-list {
+            color: #2f447a;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .custom-list p {
+            margin: 5px 0;
+            padding-left: 15px;
+            text-indent: -15px; /* Membuat baris kedua rata dengan teks, bukan tanda > */
+        }
+
+        /* =========================================
+           5. PENGATURAN TABEL FANART
+           ========================================= */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* Agar tabel bisa digeser kiri-kanan di HP jika kepanjangan */
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            color: #2f447a;
+        }
+
+        th, td {
+            border: 1px solid #b5bdd0; /* Warna garis tabel */
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e9ecf2; /* Warna latar judul kolom */
+            font-weight: 600;
+        }
+
+        td:first-child {
+            text-align: left; /* Nama talent rata kiri */
+            font-weight: 500;
+        }
+
+        .emoji-icon {
+            font-size: 16px;
+        }
+
+        .small-note {
+            font-size: 12px;
+            color: #1D357F;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           6. PENGATURAN HASHTAG & LINK
+           ========================================= */
+        .hashtag-list p {
+            font-size: 18px;
+            color: #2f447a;
+            margin: 8px 0;
+        }
+
+        .inline-link {
+            display: inline-block;
+            font-size: 20px;
+            color: #2f447a;
+            text-decoration: underline;
+            margin: 20px 0;
+        }
+
+        .inline-link:hover {
+            color: #1a2a5a;
+        }
+
+        .ship-list p {
+            margin: 4px 0;
+            font-size: 14.5px;
+            color: #2f447a;
+        }
+
+        .feedback-link {
+            display: block;
+            font-size: 22px;
+            color: #2f447a;
+            text-decoration: underline;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           7. PENGATURAN TOMBOL KEMBALI
+           ========================================= */
+        .back-icon {
+            display: block;
+            text-align: center; 
+            margin-top: 60px; 
+        }
+
+        .back-icon a {
+            color: #1D357F; 
+            font-size: 28px; 
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .back-icon a:hover {
+            color: #1a2a5a; 
+            transform: translateX(-5px); 
+        }
+
+        /* Penyesuaian untuk layar HP */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px; 
+            }
+            .main-title { font-size: 30px; }
+            .section-title { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-title">Rules</h1>
+        <p class="sub-title">Official Rules by VERSA from versa_virtual</p>
+
+        <h2 class="section-title">• Tentang ETIKET FANDOM</h2>
+        <p class="text-content text-bold">Silakan mengikuti peraturan yang sudah tertera di deskripsi livestream masing-masing talent.</p>
+        
+        <div class="custom-list">
+            <p>> <span class="text-bold">Dilarang</span> menyebarkan ujaran kebencian (SARA, body shamming, rasisme, dll), topik seksual, dan tidak berkata kasar berlebihan.</p>
+            <p>> <span class="text-bold">Dilarang</span> keras mencari dan menyebarkan informasi pribadi talent (doxxing).</p>
+            <p>> Tidak membandingkan para talent secara negatif, juga tidak membahas VTuber di luar grup VERSA dan pihak lain jika talent tidak membahasnya lebih dulu.</p>
+            <p>> Hindari membahas kehidupan pribadi talent, kecuali talent yang memulai serta tidak dibahas berkepanjangan.</p>
+            <p>> Hindari mengirim pesan yang sama terus-menerus (spamming) dan tidak menggunakan capslock secara berlebihan.</p>
+            <p>> Spamming emoticon diperbolehkan selama digunakan dengan wajar.</p>
+            <p>> <span class="text-bold">WAJIB</span> memberi peringatan (content warning, label konten sensitif, atau warning serupa) untuk konten bermuatan NSFW dan hal sensitif lainnya.</p>
+            <p>> Diperbolehkan membuat dan menjual fan merchandise dengan syarat <span class="text-bold">BUKAN</span> menggunakan hasil AI generated, karya orang lain, dan karya official serta tidak diproduksi dalam jumlah massal.</p>
+            <p>> <span class="text-bold">Dilarang</span> memaksakan kehendak pribadi atau mengontrol (backseating) keputusan talent tanpa diminta.</p>
+            <p>> <span class="text-bold">Hindari</span> menyatakan kedekatan khusus dengan talent kecuali talent yang mengakuinya lebih dulu, bersikap posesif berlebihan dan meminta perhatian eksklusif.</p>
+        </div>
+        
+        <p class="text-content">> <span class="text-bold">Ingat bahwa interaksi di komunitas adalah publik dan profesional.</span></p>
+
+        <h2 class="section-title">• Tentang FANART RULES</h2>
+        
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Talent</th>
+                        <th>NSFW</th>
+                        <th>Suggestive</th>
+                        <th>Shipping</th>
+                        <th>Cross Dressing</th>
+                        <th>Shota Looks (SFW Only)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Agata Seven</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Alarich</td>
+                        <td class="emoji-icon">❌</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Eray Ryuki</td>
+                        <td class="emoji-icon" style="color: #7a5a9c; font-weight: bold;">➖</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                    </tr>
+                    <tr>
+                        <td>Ryoutaa</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                    </tr>
+                    <tr>
+                        <td>SouRizu</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                        <td class="emoji-icon">✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="small-note">Silakan cek akun media sosial masing-masing talent untuk melihat hashtag terkait.<br>
+        <span class="text-bold">*tanda minus artinya diperbolehkan namun dengan syarat tampilan eksplisit tidak boleh melewati pusar</span></p>
+
+        <h2 class="section-title-alt">HASHTAGS</h2>
+        <div class="hashtag-list">
+            <p>General: #VERSA</p>
+            <p>Fanart: #VERKARYA</p>
+            <p>Meme: #VERCANDA</p>
+            <p>Clip: ##VERMOMENT</p>
+            <p>Fanfic/AU: #VERKHAYAL</p>
+        </div>
+        <p class="text-content text-bold" style="margin-top: 15px;">Penggunaan hashtag fanart dan fanfic/AU hanya boleh dipakai untuk genre SELAIN shipping BxB, yume ship dan NSFW.</p>
+
+        <h2 class="section-title">• Tentang SHIPPING & YUMESHIP</h2>
+        <div class="custom-list">
+            <p>> Membuat serta mengunggah konten fans terkait shipping BxB antar member talent dan yumeship, diperbolehkan.</p>
+            <p>> Jangan membawa topik shipping dan yumeship ke platform resmi termasuk livestream (collaboration maupun solo stream), akun media sosial masing-masing talent dan VERSA Official. Kecuali talent yang membahasnya secara langsung serta tidak dibahas berkepanjangan.</p>
+            <p>> Tidak boleh menyebut (mention) akun talent secara langsung di konten fans yang memuat shipping dan yumeship.</p>
+            <p>> Konten yumeship (terutama fanart) tidak boleh diunggah dengan hashtag fanart masing-masing member talent.</p>
+            <p>> Hindari melakukan flirting berlebihan terhadap semua member talent.</p>
+            <p>> Hormati batasan (boundaries) antara talent dan komunitas.</p>
+        </div>
+
+        <a href="https://x.com/i/status/2030086040283926728" class="inline-link">More details VERATURAN</a>
+
+        <h2 class="section-title">FANDOM HASHTAG GUIDELINE</h2>
+        <p class="text-content" style="font-size: 18px; margin-top: -10px; margin-bottom: 20px;">by Anomalus Project</p>
+        
+        <p class="text-content">• Hashtag fanart di luar hashtag official dari VERSA.<br>
+        <span class="text-bold">#UNIVERSArt</span></p>
+
+        <p class="text-content" style="margin-bottom: 5px;">• Tagging ship name list:</p>
+        <div class="ship-list">
+            <p>💜 Spark (✨)</p>
+            <p>🤍 Crescent (🌙)</p>
+            <p>💛 Tabby (🐱)</p>
+            <p>🩷 Shoe (👟)</p>
+            <p>❤️ Cookie (🍪)</p>
+        </div>
+
+        <div class="text-content" style="margin-top: 20px;">
+            <p>• Gunakan tag #UNIVERSArt untuk fanart <span class="text-bold">di luar ketentuan official hashtag.</span> (Boleh digunakan untuk bxb dan yume ship).</p>
+            <p>• Semua tag yang tertera di sini, tidak boleh digunakan bersama dengan official hashtag.</p>
+            <p>• <span class="text-bold">Tetap perhatikan ketentuan dari #VERATURAN</span></p>
+            <p>• Dilarang membawa ship apapun ke platform resmi VERSA (seperti mentioning di media sosial sampai livestream)</p>
+            <p>• Gunakan tagging ship ini dengan bijaksana untuk memudahkan kalian dalam mencari konten ataupun menghindari konten tertentu.</p>
+        </div>
+
+        <p class="small-note" style="margin-top: 30px;">**We would like to sincerely thank @ciiyupi and @bukanfui for compiling the tagging ship name list. We truly appreciate your dedication and support 🫶🏼</p>
+
+        <h2 class="section-title-alt">Feedback & Suggestions</h2>
+        <p class="text-content">Bagi UniVERSA yang ingin menyampaikan ide, kritik, saran, atau laporan anonim, Tim VERSA memberikan sarananya nih.</p>
+        <p class="text-content">Silakan mengisi Google Form di bawah ini. Mohon digunakan dengan bijak demi kebaikan bersama 🤩</p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoMyuLZqSioyH8KcGAeFAi_COnnR24hkfZMSu7Dz6y4PySGQ/viewform?usp=send_form" class="feedback-link">Kotak Laporan, Kritik, dan Saran</a>
+
+        <div class="back-icon">
+            <a href="index.html" title="Kembali ke Menu Utama"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+    </div>
+
+</body>
+</html>
