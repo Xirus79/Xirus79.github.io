@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Anomalus Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG (BACKGROUND) 
+           ========================================= */
+        body {
+            /* Warna latar belakang disamakan dengan halaman utama */
+            background-color: #939fb5; 
+            margin: 0;
+            /* Memberikan ruang kosong di atas dan bawah agar di HP tidak menempel ke ujung layar */
+            padding: 50px 20px; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH (CONTAINER)
+           ========================================= */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            /* KUNCI: Kotak About ini lebih LEBAR dari kotak menu utama (di gambar referensimu bentuknya persegi panjang). 
+               Saya set di 800px. Jika dirasa terlalu lebar, kecilkan ke 700px. */
+            max-width: 800px; 
+            
+            /* Jarak teks ke garis kotak: Atas 60px, Kanan 60px, Bawah 50px, Kiri 60px */
+            padding: 60px 60px 50px 60px; 
+            
+            border-radius: 8px; /* Ujung kotak sedikit membulat seperti Carrd */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           3. PENGATURAN JUDUL (HEADING)
+           ========================================= */
+        .title {
+            color: #1D357F; /* Warna Biru Dongker khas Anomalus */
+            font-size: 24px;
+            font-weight: 700; /* Font tebal / Bold */
+            text-align: center; /* Judul berada tepat di tengah */
+            margin-top: 0;
+            margin-bottom: 30px; /* Jarak antara judul dan paragraf pertama */
+            letter-spacing: 1px; /* Jarak antar huruf sedikit dilebarkan */
+        }
+
+        /* =========================================
+           4. PENGATURAN TEKS PARAGRAF
+           ========================================= */
+        .content-text {
+            color: #2f447a; /* Warna tulisan biru yang sedikit lebih pudar dari judul */
+            font-size: 14.5px; /* Ukuran font disesuaikan agar rapi dan tidak terlalu besar */
+            line-height: 1.6; /* Jarak spasi antar baris atas dan bawah agar nyaman dibaca */
+            text-align: left; /* Teks rata kiri seperti di gambar Carrd kamu */
+            margin-bottom: 20px; /* Jarak antar paragraf (enter) */
+        }
+
+        /* Pengaturan khusus untuk kata-kata yang ditebalkan (Bold) di dalam paragraf */
+        .content-text strong {
+            color: #1D357F; /* Warnanya dibuat sedikit lebih gelap agar terlihat menonjol */
+        }
+
+        /* =========================================
+           5. PENGATURAN TOMBOL KEMBALI (BACK ICON)
+           ========================================= */
+        .back-icon {
+            display: block;
+            text-align: center; /* Memastikan ikon panah ada di tengah bawah */
+            margin-top: 40px; /* Jarak ikon panah dengan teks paragraf terakhir */
+        }
+
+        .back-icon a {
+            color: #1D357F; /* Warna ikon panah */
+            font-size: 28px; /* Ukuran ikon panah */
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        /* Efek saat panah disentuh kursor */
+        .back-icon a:hover {
+            color: #1a2a5a; 
+            transform: translateX(-5px); /* Animasi panah bergeser sedikit ke kiri saat di-hover */
+        }
+        
+        /* Penyesuaian untuk layar HP yang kecil */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px; /* Di HP, jarak pinggirnya dipersempit agar teks tidak terlalu terjepit */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">ABOUT ANOMALUS PROJECT</h1>
+
+        <p class="content-text">
+            Anomalus Project hadir sebagai unofficial fanbase VERSA dilatarbelakangi kecintaan kami "Anomins" terhadap boyband virtual yang terdiri dari lima VTuber anomali yaitu Alarich, Agata Seven, Eray Ryuki, Ryoutaa, dan SouRizu.
+        </p>
+
+        <p class="content-text">
+            Kenapa Anomalus Project?<br>
+            <strong>Anomalus</strong> diambil dari sebutan VERSA sebelum debut di agensi, yakni <strong>Virtual Anomali</strong>.<br>
+            <strong>Project</strong> diambil dari tujuan awal kami yaitu kami hadir sebagai penyelenggara event guna meramaikan perayaan member VERSA.
+        </p>
+
+        <p class="content-text">
+            Tapi kini berkat dukungan dari UniVERSA, aktivitas yang kami lakukan lebih luas. Mulai dari memberikan informasi tentang jadwal stream harian, event, donasi, hingga konten menarik untuk memperkenalkan VERSA kepada UniVERSA semakin kenal dan yang belum kenal? Jadi kenal.
+        </p>
+
+        <p class="content-text">
+            Tertarik untuk bergabung menjadi artist maupun partisipan di projek selanjutnya? Jangan lupa join server kami, Minna!! 🤩
+        </p>
+
+        <div class="back-icon">
+            <a href="index.html" title="Kembali ke Menu Utama"><i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
