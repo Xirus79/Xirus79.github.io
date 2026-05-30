@@ -32,10 +32,13 @@
         .container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 800px; /* Lebar kotak diatur agar tabel muat */
-            padding: 60px 80px 60px 80px; 
+            max-width: 850px; /* Kotak sedikit dilebarkan */
+            
+            /* KUNCI PERUBAHAN: Padding kiri dan kanan diperbesar menjadi 90px agar ada ruang kosong yang luas seperti Carrd */
+            padding: 70px 90px 60px 90px; 
+            
             border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
             box-sizing: border-box;
         }
 
@@ -43,62 +46,81 @@
            3. PENGATURAN JUDUL & TEKS UMUM
            ========================================= */
         .main-title {
-            color: #1D357F; 
-            font-size: 38px;
+            color: #1a2b6d; /* Biru sangat gelap */
+            font-size: 34px; /* Dikecilkan sedikit */
             font-weight: 700; 
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
         }
 
         .sub-title {
-            color: #4a5c8c; 
-            font-size: 18px;
+            color: #5c6b8c; /* Biru keabu-abuan pucat seperti Carrd */
+            font-size: 16px; /* Dikecilkan */
             font-weight: 400;
             margin-top: 0;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .section-title {
-            color: #1D357F;
-            font-size: 22px;
+            color: #1a2b6d;
+            font-size: 20px; /* Dikecilkan */
             font-weight: 700;
-            margin-top: 40px;
+            margin-top: 45px;
             margin-bottom: 15px;
         }
 
         .section-title-alt {
-            color: #1D357F;
-            font-size: 26px;
+            color: #1a2b6d;
+            font-size: 24px;
             font-weight: 700;
-            margin-top: 40px;
+            margin-top: 45px;
             margin-bottom: 15px;
         }
 
+        .text-bold-small {
+            color: #1a2b6d;
+            font-size: 13.5px; /* Dikecilkan */
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
         .text-content {
-            color: #2f447a;
-            font-size: 10.5px;
+            color: #3a5084;
+            font-size: 13.5px; /* Dikecilkan agar persis Carrd */
             line-height: 1.6;
             margin-bottom: 15px;
+            font-weight: 400;
         }
 
         .text-bold {
             font-weight: 700;
-            color: #1D357F;
+            color: #1a2b6d;
         }
 
         /* =========================================
            4. PENGATURAN LIST DENGAN TANDA '>'
            ========================================= */
         .custom-list {
-            color: #2f447a;
-            font-size: 14.5px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            color: #3a5084;
+            font-size: 13.5px; /* Dikecilkan */
+            line-height: 1.5; /* Spasi antar baris sedikit dirapatkan */
+            margin-bottom: 25px;
         }
 
-        .custom-list p {
-            margin: 5px 0;
-            padding-left: 15px;
-            text-indent: -15px; /* Membuat baris kedua rata dengan teks, bukan tanda > */
+        /* Menggunakan flexbox agar teks selalu sejajar lurus ke bawah, tidak masuk ke bawah tanda > */
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px; /* Jarak antar poin sangat rapat seperti Carrd */
+        }
+
+        .list-arrow {
+            margin-right: 6px;
+            font-weight: 400;
+        }
+
+        .list-text {
+            flex: 1;
         }
 
         /* =========================================
@@ -106,40 +128,40 @@
            ========================================= */
         .table-responsive {
             width: 100%;
-            overflow-x: auto; /* Agar tabel bisa digeser kiri-kanan di HP jika kepanjangan */
+            overflow-x: auto; 
             margin-bottom: 10px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
-            color: #2f447a;
+            font-size: 12.5px; /* Teks dalam tabel dikecilkan sedikit */
+            color: #3a5084;
         }
 
         th, td {
-            border: 1px solid #b5bdd0; /* Warna garis tabel */
-            padding: 12px 10px;
+            border: 1px solid #b5bdd0; 
+            padding: 10px;
             text-align: center;
         }
 
         th {
-            background-color: #e9ecf2; /* Warna latar judul kolom */
+            background-color: #e9ecf2; 
             font-weight: 600;
         }
 
         td:first-child {
-            text-align: left; /* Nama talent rata kiri */
+            text-align: left; 
             font-weight: 500;
         }
 
         .emoji-icon {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .small-note {
-            font-size: 12px;
-            color: #1D357F;
+            font-size: 11.5px;
+            color: #1a2b6d;
             margin-top: 5px;
             line-height: 1.5;
         }
@@ -148,33 +170,33 @@
            6. PENGATURAN HASHTAG & LINK
            ========================================= */
         .hashtag-list p {
-            font-size: 18px;
-            color: #2f447a;
-            margin: 8px 0;
+            font-size: 16px;
+            color: #3a5084;
+            margin: 6px 0;
         }
 
         .inline-link {
             display: inline-block;
-            font-size: 20px;
-            color: #2f447a;
+            font-size: 18px;
+            color: #3a5084;
             text-decoration: underline;
             margin: 20px 0;
         }
 
         .inline-link:hover {
-            color: #1a2a5a;
+            color: #1a2b6d;
         }
 
         .ship-list p {
             margin: 4px 0;
-            font-size: 14.5px;
-            color: #2f447a;
+            font-size: 13.5px;
+            color: #3a5084;
         }
 
         .feedback-link {
             display: block;
-            font-size: 22px;
-            color: #2f447a;
+            font-size: 20px;
+            color: #3a5084;
             text-decoration: underline;
             margin-top: 20px;
         }
@@ -189,7 +211,7 @@
         }
 
         .back-icon a {
-            color: #1D357F; 
+            color: #1a2b6d; 
             font-size: 28px; 
             text-decoration: none;
             transition: color 0.3s ease, transform 0.2s ease;
@@ -197,17 +219,17 @@
         }
 
         .back-icon a:hover {
-            color: #1a2a5a; 
+            color: #0d163b; 
             transform: translateX(-5px); 
         }
 
-        /* Penyesuaian untuk layar HP */
-        @media (max-width: 600px) {
+        /* Penyesuaian untuk layar HP agar padding tidak memakan tempat */
+        @media (max-width: 768px) {
             .container {
-                padding: 40px 25px; 
+                padding: 40px 30px; 
             }
             .main-title { font-size: 30px; }
-            .section-title { font-size: 20px; }
+            .section-title { font-size: 18px; }
         }
     </style>
 </head>
@@ -218,22 +240,55 @@
         <p class="sub-title">Official Rules by VERSA from versa_virtual</p>
 
         <h2 class="section-title">• Tentang ETIKET FANDOM</h2>
-        <p class="text-content text-bold">Silakan mengikuti peraturan yang sudah tertera di deskripsi livestream masing-masing talent.</p>
+        <p class="text-bold-small">Silakan mengikuti peraturan yang sudah tertera di deskripsi livestream masing-masing talent.</p>
         
         <div class="custom-list">
-            <p>> <span class="text-bold">Dilarang</span> menyebarkan ujaran kebencian (SARA, body shamming, rasisme, dll), topik seksual, dan tidak berkata kasar berlebihan.</p>
-            <p>> <span class="text-bold">Dilarang</span> keras mencari dan menyebarkan informasi pribadi talent (doxxing).</p>
-            <p>> Tidak membandingkan para talent secara negatif, juga tidak membahas VTuber di luar grup VERSA dan pihak lain jika talent tidak membahasnya lebih dulu.</p>
-            <p>> Hindari membahas kehidupan pribadi talent, kecuali talent yang memulai serta tidak dibahas berkepanjangan.</p>
-            <p>> Hindari mengirim pesan yang sama terus-menerus (spamming) dan tidak menggunakan capslock secara berlebihan.</p>
-            <p>> Spamming emoticon diperbolehkan selama digunakan dengan wajar.</p>
-            <p>> <span class="text-bold">WAJIB</span> memberi peringatan (content warning, label konten sensitif, atau warning serupa) untuk konten bermuatan NSFW dan hal sensitif lainnya.</p>
-            <p>> Diperbolehkan membuat dan menjual fan merchandise dengan syarat <span class="text-bold">BUKAN</span> menggunakan hasil AI generated, karya orang lain, dan karya official serta tidak diproduksi dalam jumlah massal.</p>
-            <p>> <span class="text-bold">Dilarang</span> memaksakan kehendak pribadi atau mengontrol (backseating) keputusan talent tanpa diminta.</p>
-            <p>> <span class="text-bold">Hindari</span> menyatakan kedekatan khusus dengan talent kecuali talent yang mengakuinya lebih dulu, bersikap posesif berlebihan dan meminta perhatian eksklusif.</p>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text"><span class="text-bold">Dilarang</span> menyebarkan ujaran kebencian (SARA, body shamming, rasisme, dll), topik seksual, dan tidak berkata kasar berlebihan.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text"><span class="text-bold">Dilarang</span> keras mencari dan menyebarkan informasi pribadi talent (doxxing).</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Tidak membandingkan para talent secara negatif, juga tidak membahas VTuber di luar grup VERSA dan pihak lain jika talent tidak membahasnya lebih dulu.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Hindari membahas kehidupan pribadi talent, kecuali talent yang memulai serta tidak dibahas berkepanjangan.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Hindari mengirim pesan yang sama terus-menerus (spamming) dan tidak menggunakan capslock secara berlebihan.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Spamming emoticon diperbolehkan selama digunakan dengan wajar.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text"><span class="text-bold">WAJIB</span> memberi peringatan (content warning, label konten sensitif, atau warning serupa) untuk konten bermuatan NSFW dan hal sensitif lainnya.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Diperbolehkan membuat dan menjual fan merchandise denngan syarat <span class="text-bold">BUKAN</span> menggunakan hasil AI generated, karya orang lain, dan karya official serta tidak diproduksi dalam jumlah massal.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text"><span class="text-bold">Dilarang</span> memaksakan kehendak pribadi atau mengontrol (backseating) keputusan talent tanpa diminta.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text"><span class="text-bold">Hindari</span> menyatakan kedekatan khusus dengan talent kecuali talent yang mengakuinya lebih dulu, bersikap posesif berlebihan dan meminta perhatian eksklusif.</span>
+            </div>
         </div>
         
-        <p class="text-content">> <span class="text-bold">Ingat bahwa interaksi di komunitas adalah publik dan profesional.</span></p>
+        <div class="list-item" style="margin-bottom: 40px; color: #3a5084; font-size: 13.5px;">
+            <span class="list-arrow">&gt;</span>
+            <span class="list-text text-bold">Ingat bahwa interaksi di komunitas adalah publik dan profesional.</span>
+        </div>
 
         <h2 class="section-title">• Tentang FANART RULES</h2>
         
@@ -308,18 +363,36 @@
 
         <h2 class="section-title">• Tentang SHIPPING & YUMESHIP</h2>
         <div class="custom-list">
-            <p>> Membuat serta mengunggah konten fans terkait shipping BxB antar member talent dan yumeship, diperbolehkan.</p>
-            <p>> Jangan membawa topik shipping dan yumeship ke platform resmi termasuk livestream (collaboration maupun solo stream), akun media sosial masing-masing talent dan VERSA Official. Kecuali talent yang membahasnya secara langsung serta tidak dibahas berkepanjangan.</p>
-            <p>> Tidak boleh menyebut (mention) akun talent secara langsung di konten fans yang memuat shipping dan yumeship.</p>
-            <p>> Konten yumeship (terutama fanart) tidak boleh diunggah dengan hashtag fanart masing-masing member talent.</p>
-            <p>> Hindari melakukan flirting berlebihan terhadap semua member talent.</p>
-            <p>> Hormati batasan (boundaries) antara talent dan komunitas.</p>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Membuat serta mengunggah konten fans terkait shipping BxB antar member talent dan yumeship, diperbolehkan.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Jangan membawa topik shipping dan yumeship ke platform resmi termasuk livestream (collaboration maupun solo stream), akun media sosial masing-masing talent dan VERSA Official. Kecuali talent yang membahasnya secara langsung serta tidak dibahas berkepanjangan.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Tidak boleh menyebut (mention) akun talent secara langsung di konten fans yang memuat shipping dan yumeship.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Konten yumeship (terutama fanart) tidak boleh diunggah dengan hashtag fanart masing-masing member talent.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Hindari melakukan flirting berlebihan terhadap semua member talent.</span>
+            </div>
+            <div class="list-item">
+                <span class="list-arrow">&gt;</span>
+                <span class="list-text">Hormati batasan (boundaries) antara talent dan komunitas.</span>
+            </div>
         </div>
 
-        <a href="https://x.com/i/status/2030086040283926728" class="inline-link">More details VERATURAN</a>
+        <a href="#" class="inline-link">More details VERATURAN</a>
 
         <h2 class="section-title">FANDOM HASHTAG GUIDELINE</h2>
-        <p class="text-content" style="font-size: 18px; margin-top: -10px; margin-bottom: 20px;">by Anomalus Project</p>
+        <p class="text-content" style="font-size: 16px; margin-top: -10px; margin-bottom: 25px;">by Anomalus Project</p>
         
         <p class="text-content">• Hashtag fanart di luar hashtag official dari VERSA.<br>
         <span class="text-bold">#UNIVERSArt</span></p>
@@ -333,7 +406,7 @@
             <p>❤️ Cookie (🍪)</p>
         </div>
 
-        <div class="text-content" style="margin-top: 20px;">
+        <div class="text-content" style="margin-top: 25px;">
             <p>• Gunakan tag #UNIVERSArt untuk fanart <span class="text-bold">di luar ketentuan official hashtag.</span> (Boleh digunakan untuk bxb dan yume ship).</p>
             <p>• Semua tag yang tertera di sini, tidak boleh digunakan bersama dengan official hashtag.</p>
             <p>• <span class="text-bold">Tetap perhatikan ketentuan dari #VERATURAN</span></p>
@@ -341,13 +414,13 @@
             <p>• Gunakan tagging ship ini dengan bijaksana untuk memudahkan kalian dalam mencari konten ataupun menghindari konten tertentu.</p>
         </div>
 
-        <p class="small-note" style="margin-top: 30px;">**We would like to sincerely thank @ciiyupi and @bukanfui for compiling the tagging ship name list. We truly appreciate your dedication and support 🫶🏼</p>
+        <p class="small-note" style="margin-top: 35px;">**We would like to sincerely thank @ciiyupi and @bukanfui for compiling the tagging ship name list. We truly appreciate your dedication and support 🫶🏼</p>
 
         <h2 class="section-title-alt">Feedback & Suggestions</h2>
         <p class="text-content">Bagi UniVERSA yang ingin menyampaikan ide, kritik, saran, atau laporan anonim, Tim VERSA memberikan sarananya nih.</p>
         <p class="text-content">Silakan mengisi Google Form di bawah ini. Mohon digunakan dengan bijak demi kebaikan bersama 🤩</p>
         
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoMyuLZqSioyH8KcGAeFAi_COnnR24hkfZMSu7Dz6y4PySGQ/viewform?usp=send_form" class="feedback-link">Kotak Laporan, Kritik, dan Saran</a>
+        <a href="#" class="feedback-link">Kotak Laporan, Kritik, dan Saran</a>
 
         <div class="back-icon">
             <a href="index.html" title="Kembali ke Menu Utama"><i class="fas fa-arrow-left"></i></a>
