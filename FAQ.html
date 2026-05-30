@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Anomalus Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG
+           ========================================= */
+        body {
+            background-color: #8e9bb1; /* Latar abu-abu kebiruan */
+            margin: 0;
+            padding: 50px 20px; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH (CONTAINER)
+           ========================================= */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px; /* Kotak lebar dan lega seperti halaman About/Rules */
+            
+            /* Jarak teks ke pinggir kotak (Atas Kanan Bawah Kiri) */
+            padding: 70px 80px 60px 80px; 
+            
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           3. PENGATURAN TEKS FAQ
+           ========================================= */
+        .faq-text {
+            color: #1D357F; /* Teks warna biru gelap konsisten */
+            font-size: 14.5px;
+            line-height: 1.6;
+            text-align: left; /* Teks rata kiri */
+            margin-bottom: 25px; /* Jarak yang cukup jauh antar paragraf/enter */
+            font-weight: 400; /* Ketebalan font standar */
+        }
+
+        /* Khusus untuk teks paragraf terakhir agar jarak bawahnya tidak kelebihan */
+        .faq-text:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* =========================================
+           4. PENGATURAN TOMBOL KEMBALI
+           ========================================= */
+        .back-icon {
+            display: block;
+            text-align: center; /* Memastikan ikon panah di tengah */
+            margin-top: 60px; /* Jarak panah dengan tulisan terakhir */
+        }
+
+        .back-icon a {
+            color: #1D357F; 
+            font-size: 28px; 
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .back-icon a:hover {
+            color: #112154; 
+            transform: translateX(-5px); /* Animasi panah bergeser saat disentuh */
+        }
+        
+        /* Penyesuaian untuk layar HP agar margin tidak terpotong */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 30px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <p class="faq-text">
+            Q: Kalo karya dari UNIVERSA berupa Fanfiction atau AU kita pake hashtag apa min?
+        </p>
+
+        <p class="faq-text">
+            A: Kami melihat fanfiction maupun AU sebenarnya bisa dipandang sama dengan fanart sebagai fanwork atau karya dari penggemar.
+        </p>
+
+        <p class="faq-text">
+            Sederhananya, bisa disimpulkan bahwa ketiganya adalah bentuk ekspresi kreativitas dari penggemar yang terinspirasi dari karya yang sudah ada (terinspirasi dari VERSA/IP dari VERSA).
+        </p>
+
+        <p class="faq-text">
+            Bedanya hanya pada medianya. Lebih jelas, fanfiction dan AU disampaikan lewat cerita atau tulisan sedangkan fanart disampaikan lewat gambar atau visual.
+        </p>
+
+        <p class="faq-text">
+            Meski berbeda bentuk, kami melihat adanya kesamaan dari semuanya yaitu mengambil karakter, dunia, atau konsep yang sudah diciptakan oleh orang lain, lalu mengembangkannya menjadi sesuatu yang baru sesuai imajinasi penggemar.
+        </p>
+
+        <p class="faq-text">
+            Jadi sederhananya adalah UNIVERSA bisa menggunakan hashtag UNIVERSArt untuk semua karya kalian.<br>
+            Dalam bentuk fanfiction, AU, maupun fanart (drawing, dll).
+        </p>
+
+        <p class="faq-text">
+            Mohon perhatikan kembali penggunaan hashtag tersebut ya.<br>
+            (Tidak boleh digabung dengan official hashtag, salah satunya.)
+        </p>
+
+        <div class="back-icon">
+            <a href="index.html" title="Kembali ke Menu Utama"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+    </div>
+
+</body>
+</html>
