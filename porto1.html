@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FONT AWESOME UNTUK IKON PANAH (BACK BUTTON) -->
+    <!-- FONT AWESOME UNTUK IKON PANAH -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -35,14 +35,12 @@
         .container {
             background-color: #ffffff;
             width: 100%;
-            /* Kotak dilebarkan agar muat 2-3 tweet sekaligus di layar desktop */
-            max-width: 950px; 
-            padding: 50px 60px 40px 60px; 
+            max-width: 700px; /* Ukuran yang pas untuk memfokuskan 1 tweet di tengah */
+            padding: 50px 40px 40px 40px; 
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
             box-sizing: border-box;
-            /* Memastikan tidak ada konten yang bocor ke area abu-abu */
-            overflow: hidden; 
+            /* Kita hapus overflow:hidden di sini agar tombol panah bisa sedikit keluar */
         }
 
         /* =========================================
@@ -50,9 +48,9 @@
            ========================================= */
         .category-title {
             color: #1D357F; 
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700; 
-            margin-top: 40px; 
+            margin-top: 50px; 
             margin-bottom: 20px; 
             text-transform: uppercase; 
             letter-spacing: 0.5px;
@@ -64,48 +62,53 @@
         }
 
         /* =========================================
-           4. PENGATURAN KOTAK GESER (HORIZONTAL SCROLL)
+           4. KOTAK CAROUSEL UTAMA (PEMBUNGKUS)
+           ========================================= */
+        .carousel-outer {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* =========================================
+           5. PENGATURAN AREA GESER (HILANGKAN SCROLLBAR)
            ========================================= */
         .scroll-container {
             display: flex;
-            /* KUNCI: flex-wrap nowrap memaksa semua item berjejer ke samping, tidak boleh jatuh ke bawah */
             flex-wrap: nowrap; 
             gap: 20px; 
             overflow-x: auto; 
-            padding-bottom: 15px; 
+            width: 100%;
+            
+            /* KUNCI: Padding dinamis agar tweet SELALU tepat di tengah layar */
+            /* 160px adalah setengah dari lebar kotak tweet (320px / 2) */
+            padding: 10px calc(50% - 160px); 
+            box-sizing: border-box;
             
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
+            
+            /* Sembunyikan scrollbar bawaan browser */
+            scrollbar-width: none; /* Untuk Firefox */
+            -ms-overflow-style: none; /* Untuk IE/Edge */
         }
 
-        /* Desain Scrollbar Custom agar terlihat rapi */
         .scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        .scroll-container::-webkit-scrollbar-track {
-            background: #f1f5f9; 
-            border-radius: 10px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-            background: #1D357F; 
-            border-radius: 10px;
+            display: none; /* Untuk Chrome/Safari */
         }
 
         /* =========================================
-           5. PENGATURAN SETIAP ITEM DI DALAM KOTAK GESER
+           6. PENGATURAN SETIAP KOTAK TWEET
            ========================================= */
         .scroll-item {
-            /* KUNCI: Menetapkan lebar absolut pada setiap kotak Twitter agar tidak menyusut (320px) */
-            flex: 0 0 320px; 
-            min-width: 320px;
-            align-self: flex-start; /* Menjaga tweet tetap di atas jika tingginya berbeda */
-            scroll-snap-align: center; 
+            flex: 0 0 320px; /* Lebar absolut tweet */
+            scroll-snap-align: center; /* Akan selalu snap (berhenti) di tengah */
             display: flex;
             justify-content: center;
         }
 
-        /* Memaksa embed Twitter agar mengisi penuh lebar kotak */
         .scroll-item .twitter-tweet,
         .scroll-item iframe {
             width: 100% !important;
@@ -113,51 +116,79 @@
         }
 
         /* =========================================
-           6. PENGATURAN TOMBOL KEMBALI
+           7. DESAIN TOMBOL PANAH NAVIGASI
+           ========================================= */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            color: #1D357F;
+            border: 2px solid #e4e8f0;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #1D357F;
+            color: #ffffff;
+            border-color: #1D357F;
+        }
+
+        /* Posisi tombol agak keluar sedikit agar tidak menutupi Tweet */
+        .prev-btn { left: -15px; }
+        .next-btn { right: -15px; }
+
+        /* =========================================
+           8. PENGATURAN TOMBOL KEMBALI
            ========================================= */
         .back-icon {
             display: block;
             text-align: center; 
-            margin-top: 40px; 
+            margin-top: 50px; 
         }
-
         .back-icon a {
             color: #1D357F; 
             font-size: 28px; 
             text-decoration: none;
             transition: color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
         }
-
         .back-icon a:hover {
             color: #112154; 
             transform: translateX(-5px); 
+            display: inline-block;
         }
 
         /* =========================================
-           7. PENGATURAN KHUSUS UNTUK LAYAR HP
+           9. PENGATURAN LAYAR HP
            ========================================= */
         @media (max-width: 600px) {
-            body {
-                padding: 40px 0; 
-            }
+            body { padding: 40px 0; }
             .container {
                 width: 95%; 
                 padding: 40px 20px; 
             }
-            .category-title {
-                font-size: 18px;
+            .category-title { font-size: 18px; }
+            
+            .scroll-container {
+                /* Di HP padding disesuaikan agar muat */
+                padding: 10px calc(50% - 140px); 
             }
             .scroll-item {
-                /* Di HP, lebar kotaknya dikecilkan sedikit agar muat */
-                flex: 0 0 280px; 
-                min-width: 280px;
+                flex: 0 0 280px; /* Ukuran tweet sedikit mengecil di HP */
             }
-            .back-icon {
-                margin-top: 30px;
-            }
-            .back-icon a {
-                font-size: 20px; 
+            
+            /* KUNCI: Sembunyikan tombol panah di HP, karena di HP lebih enak di-swipe/geser */
+            .nav-btn {
+                display: none; 
             }
         }
     </style>
@@ -171,70 +202,74 @@
              ============================================== -->
         <h2 class="category-title">VERSA's MEMBERS BDAY CELEBRATION</h2>
         
-        <div class="scroll-container">
-            <!-- Item 1: HatsumatsuRay -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">As the year turns, his presence unfolds beneath luminous skies, fireworks, and quiet magic. Some moments are meant to glow softly ✨️💜<a href="https://x.com/hashtag/HatsumatsuRay?src=hash&amp;ref_src=twsrc%5Etfw">#HatsumatsuRay</a><a href="https://x.com/hashtag/BirthRayParty?src=hash&amp;ref_src=twsrc%5Etfw">#BirthRayParty</a> <a href="https://t.co/6cBPz1Hxw5">pic.twitter.com/6cBPz1Hxw5</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2005082064060809461?ref_src=twsrc%5Etfw">December 28, 2025</a>
-                </blockquote>
-            </div>
+        <div class="carousel-outer">
+            <!-- Tombol Kiri -->
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
             
-            <!-- Item 2: ReveDeRizu -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Perjalanan kecil menuju hari ulang tahun Mas Mas Jawa kesayangan kita akan dimulai!<br><br>Bagai sang pangeran yang berkelana mencari impiannya, SouRizu menjadi bintang yang selalu punya cara unik untuk menyinari hari-hari <a href="https://x.com/hashtag/Rizunauts?src=hash&amp;ref_src=twsrc%5Etfw">#Rizunauts</a> dan <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> 🌙✨<a href="https://x.com/hashtag/ReveDeRizu?src=hash&amp;ref_src=twsrc%5Etfw">#ReveDeRizu</a> <a href="https://t.co/uXXdWAs1yV">pic.twitter.com/uXXdWAs1yV</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2029441596069167399?ref_src=twsrc%5Etfw">March 5, 2026</a>
-                </blockquote> 
+            <div class="scroll-container">
+                <!-- Item 1: HatsumatsuRay -->
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet">
+                        <p lang="in" dir="ltr">Hatsumatsu Ray (Contoh Embed)</p>&mdash; VERSA (@versa_virtual) <a href="https://twitter.com/X/status/123456789">January 1, 2026</a>
+                    </blockquote>
+                </div>
+                <!-- Item 2: ReveDeRizu -->
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet">
+                        <p lang="in" dir="ltr">Reve De Rizu (Contoh Embed)</p>&mdash; VERSA (@versa_virtual) <a href="https://twitter.com/X/status/123456789">January 2, 2026</a>
+                    </blockquote>
+                </div>
             </div>
-        </div>
 
-        <br>
+            <!-- Tombol Kanan -->
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
 
         <!-- ==============================================
              KATEGORI 2: OTHER EVENTS
              ============================================== -->
         <h2 class="category-title">OTHER EVENTS</h2>
         
-        <div class="scroll-container">
-            <!-- Item 1: Debut Anniversary (Struktur sudah diperbaiki) -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One year since the veil dropped. <br><br>From melodies we craved to sharing laughs. He’s not just a star, he’s a friend we’ve all come to love 💜<br><br>Here we celebrate the untold story we can&#39;t wait to uncover. <br><br>Cheers to many more chapters!<br>Happy <a href="https://x.com/hashtag/AnniversEray?src=hash&amp;ref_src=twsrc%5Etfw">#AnniversEray</a> 🎉 <a href="https://t.co/5EPk0l5j89">pic.twitter.com/5EPk0l5j89</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1982325377419948399?ref_src=twsrc%5Etfw">October 26, 2025</a>
-                </blockquote>
+        <div class="carousel-outer">
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One year since the veil dropped. <br><br>From melodies we craved to sharing laughs. He’s not just a star, he’s a friend we’ve all come to love 💜<br><br>Here we celebrate the untold story we can&#39;t wait to uncover. <br><br>Cheers to many more chapters!<br>Happy <a href="https://x.com/hashtag/AnniversEray?src=hash&amp;ref_src=twsrc%5Etfw">#AnniversEray</a> 🎉 <a href="https://t.co/5EPk0l5j89">pic.twitter.com/5EPk0l5j89</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1982325377419948399?ref_src=twsrc%5Etfw">October 26, 2025</a></blockquote>
+                </div>
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Anomins mengajak <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> membantu saudara-saudara kita yang terdampak bencana di Sumatera.<br><br>⏰ Penggalangan donasi akan ditutup pada Sabtu, 29 November 2025 – 23.59 WIB<br>🤲Bantuan akan langsung disalurkan Minggu (30/11) melalui badan amal yang Anomins percaya ya<br><br>💜🤍💛🩷❤️ <a href="https://t.co/UiNxdoQvYu">pic.twitter.com/UiNxdoQvYu</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1993965103281262780?ref_src=twsrc%5Etfw">November 27, 2025</a></blockquote>
+                </div>
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Own your stage, <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a>! 🥁🎺<br><br>Creativity thrives when you&#39;re confident. We&#39;re here to give you the ultimate space to express yourself because your confidence is your power!<br><br>Anomalus Project, in collaboration with <a href="https://x.com/versa_virtual?ref_src=twsrc%5Etfw">@versa_virtual</a> present to you, <a href="https://x.com/hashtag/UNIVERSONA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSONA</a><br><br>💜🤍💛🩷❤️ <a href="https://t.co/VguuT5H45n">pic.twitter.com/VguuT5H45n</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2057296894729265368?ref_src=twsrc%5Etfw">May 21, 2026</a></blockquote>
+                </div>
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Perjalanan kecil menuju hari ulang tahun Mas Mas Jawa kesayangan kita akan dimulai!<br><br>Bagai sang pangeran yang berkelana mencari impiannya, SouRizu menjadi bintang yang selalu punya cara unik untuk menyinari hari-hari <a href="https://x.com/hashtag/Rizunauts?src=hash&amp;ref_src=twsrc%5Etfw">#Rizunauts</a> dan <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> 🌙✨<a href="https://x.com/hashtag/ReveDeRizu?src=hash&amp;ref_src=twsrc%5Etfw">#ReveDeRizu</a> <a href="https://t.co/uXXdWAs1yV">pic.twitter.com/uXXdWAs1yV</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2029441596069167399?ref_src=twsrc%5Etfw">March 5, 2026</a></blockquote>
+                </div>
             </div>
 
-            <!-- Item 2: Charity -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Anomins mengajak <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> membantu saudara-saudara kita yang terdampak bencana di Sumatera.<br><br>⏰ Penggalangan donasi akan ditutup pada Sabtu, 29 November 2025 – 23.59 WIB<br>🤲Bantuan akan langsung disalurkan Minggu (30/11) melalui badan amal yang Anomins percaya ya<br><br>💜🤍💛🩷❤️ <a href="https://t.co/UiNxdoQvYu">pic.twitter.com/UiNxdoQvYu</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1993965103281262780?ref_src=twsrc%5Etfw">November 27, 2025</a>
-                </blockquote>
-            </div>
-
-            <!-- Item 3: UNIVERSONA -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Own your stage, <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a>! 🥁🎺<br><br>Creativity thrives when you&#39;re confident. We&#39;re here to give you the ultimate space to express yourself because your confidence is your power!<br><br>Anomalus Project, in collaboration with <a href="https://x.com/versa_virtual?ref_src=twsrc%5Etfw">@versa_virtual</a> present to you, <a href="https://x.com/hashtag/UNIVERSONA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSONA</a><br><br>💜🤍💛🩷❤️ <a href="https://t.co/VguuT5H45n">pic.twitter.com/VguuT5H45n</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2057296894729265368?ref_src=twsrc%5Etfw">May 21, 2026</a>
-                </blockquote>
-            </div>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
-
-        <br>
 
         <!-- ==============================================
              KATEGORI 3: CONTENTS
              ============================================== -->
         <h2 class="category-title">CONTENTS</h2>
         
-        <div class="scroll-container">
-            <!-- Item 1: VERSApedia -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://x.com/hashtag/VERSApedia?src=hash&amp;ref_src=twsrc%5Etfw">#VERSApedia</a><br><br>Alarich, Adik Kecil yang Berbakat Besar 💛🐱<a href="https://x.com/hashtag/VERSA?src=hash&amp;ref_src=twsrc%5Etfw">#VERSA</a> <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> <a href="https://t.co/XF4lohBcIt">pic.twitter.com/XF4lohBcIt</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2054168215803367924?ref_src=twsrc%5Etfw">May 12, 2026</a>
-                </blockquote>
+        <div class="carousel-outer">
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://x.com/hashtag/VERSApedia?src=hash&amp;ref_src=twsrc%5Etfw">#VERSApedia</a><br><br>Alarich, Adik Kecil yang Berbakat Besar 💛🐱<a href="https://x.com/hashtag/VERSA?src=hash&amp;ref_src=twsrc%5Etfw">#VERSA</a> <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> <a href="https://t.co/XF4lohBcIt">pic.twitter.com/XF4lohBcIt</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2054168215803367924?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>
+                </div>
+                <div class="scroll-item">
+                    <blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://x.com/hashtag/VERTRIVIA?src=hash&amp;ref_src=twsrc%5Etfw">#VERTRIVIA</a> 💜🤍💛🩷❤️<br><br>Siapa yg gak tau dua kategori ini dalam keseharian <a href="https://x.com/hashtag/VERSA?src=hash&amp;ref_src=twsrc%5Etfw">#VERSA</a>? Kemarin ada yg sempet minta dibikinin TIER LIST nih, Minna. Anomins wujudkan tapi ini versi Anomins yaa~<br><br>Coba dong share pendapat kalian juga, <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a>! Scroll for the templates ehek 🤭 <a href="https://t.co/Hc8Ia6tsDa">pic.twitter.com/Hc8Ia6tsDa</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2033666141726642278?ref_src=twsrc%5Etfw">March 16, 2026</a></blockquote>
+                </div>
             </div>
 
-            <!-- Item 2: VERTRIVIA -->
-            <div class="scroll-item">
-                <blockquote class="twitter-tweet"><p lang="in" dir="ltr"><a href="https://x.com/hashtag/VERTRIVIA?src=hash&amp;ref_src=twsrc%5Etfw">#VERTRIVIA</a> 💜🤍💛🩷❤️<br><br>Siapa yg gak tau dua kategori ini dalam keseharian <a href="https://x.com/hashtag/VERSA?src=hash&amp;ref_src=twsrc%5Etfw">#VERSA</a>? Kemarin ada yg sempet minta dibikinin TIER LIST nih, Minna. Anomins wujudkan tapi ini versi Anomins yaa~<br><br>Coba dong share pendapat kalian juga, <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a>! Scroll for the templates ehek 🤭 <a href="https://t.co/Hc8Ia6tsDa">pic.twitter.com/Hc8Ia6tsDa</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2033666141726642278?ref_src=twsrc%5Etfw">March 16, 2026</a>
-                </blockquote>
-            </div>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
-
-        <!-- SCRIPT DARI TWITTER (Cukup satu untuk memproses semua cuitan di atas) -->
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         <!-- IKON BACK -->
         <div class="back-icon">
@@ -242,6 +277,33 @@
         </div>
 
     </div>
+
+    <!-- SCRIPT TWITTER WIDGET -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <!-- SCRIPT UNTUK MENGAKTIFKAN TOMBOL PANAH -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.carousel-outer');
+            
+            carousels.forEach(carousel => {
+                const scrollContainer = carousel.querySelector('.scroll-container');
+                const prevBtn = carousel.querySelector('.prev-btn');
+                const nextBtn = carousel.querySelector('.next-btn');
+                
+                // 340px adalah (320px lebar item + 20px jarak gap)
+                const scrollAmount = 340; 
+                
+                nextBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+                
+                prevBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
