@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FONT AWESOME UNTUK IKON PANAH -->
+    <!-- FONT AWESOME UNTUK IKON PANAH (BACK BUTTON) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -35,12 +35,11 @@
         .container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 700px; /* Ukuran yang pas untuk memfokuskan 1 tweet di tengah */
+            max-width: 700px; 
             padding: 50px 40px 40px 40px; 
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
             box-sizing: border-box;
-            /* Kita hapus overflow:hidden di sini agar tombol panah bisa sedikit keluar */
         }
 
         /* =========================================
@@ -81,8 +80,6 @@
             overflow-x: auto; 
             width: 100%;
             
-            /* KUNCI: Padding dinamis agar tweet SELALU tepat di tengah layar */
-            /* 160px adalah setengah dari lebar kotak tweet (320px / 2) */
             padding: 10px calc(50% - 160px); 
             box-sizing: border-box;
             
@@ -91,20 +88,20 @@
             -webkit-overflow-scrolling: touch;
             
             /* Sembunyikan scrollbar bawaan browser */
-            scrollbar-width: none; /* Untuk Firefox */
-            -ms-overflow-style: none; /* Untuk IE/Edge */
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
         }
 
         .scroll-container::-webkit-scrollbar {
-            display: none; /* Untuk Chrome/Safari */
+            display: none; 
         }
 
         /* =========================================
            6. PENGATURAN SETIAP KOTAK TWEET
            ========================================= */
         .scroll-item {
-            flex: 0 0 320px; /* Lebar absolut tweet */
-            scroll-snap-align: center; /* Akan selalu snap (berhenti) di tengah */
+            flex: 0 0 320px; 
+            scroll-snap-align: center; 
             display: flex;
             justify-content: center;
         }
@@ -143,7 +140,6 @@
             border-color: #1D357F;
         }
 
-        /* Posisi tombol agak keluar sedikit agar tidak menutupi Tweet */
         .prev-btn { left: -15px; }
         .next-btn { right: -15px; }
 
@@ -179,14 +175,12 @@
             .category-title { font-size: 18px; }
             
             .scroll-container {
-                /* Di HP padding disesuaikan agar muat */
                 padding: 10px calc(50% - 140px); 
             }
             .scroll-item {
-                flex: 0 0 280px; /* Ukuran tweet sedikit mengecil di HP */
+                flex: 0 0 280px; 
             }
             
-            /* KUNCI: Sembunyikan tombol panah di HP, karena di HP lebih enak di-swipe/geser */
             .nav-btn {
                 display: none; 
             }
@@ -203,7 +197,6 @@
         <h2 class="category-title">VERSA's MEMBERS BDAY CELEBRATION</h2>
         
         <div class="carousel-outer">
-            <!-- Tombol Kiri -->
             <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
             
             <div class="scroll-container">
@@ -214,9 +207,9 @@
                 <!-- Item 2: ReveDeRizu -->
                 <div class="scroll-item">
                     <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Perjalanan kecil menuju hari ulang tahun Mas Mas Jawa kesayangan kita akan dimulai!<br><br>Bagai sang pangeran yang berkelana mencari impiannya, SouRizu menjadi bintang yang selalu punya cara unik untuk menyinari hari-hari <a href="https://x.com/hashtag/Rizunauts?src=hash&amp;ref_src=twsrc%5Etfw">#Rizunauts</a> dan <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> 🌙✨<a href="https://x.com/hashtag/ReveDeRizu?src=hash&amp;ref_src=twsrc%5Etfw">#ReveDeRizu</a> <a href="https://t.co/uXXdWAs1yV">pic.twitter.com/uXXdWAs1yV</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2029441596069167399?ref_src=twsrc%5Etfw">March 5, 2026</a></blockquote>
-            </div>
+                </div>
+            </div> <!-- Ini adalah DIV penutup yang sebelumnya hilang! -->
 
-            <!-- Tombol Kanan -->
             <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
 
@@ -237,9 +230,6 @@
                 </div>
                 <div class="scroll-item">
                     <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Own your stage, <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a>! 🥁🎺<br><br>Creativity thrives when you&#39;re confident. We&#39;re here to give you the ultimate space to express yourself because your confidence is your power!<br><br>Anomalus Project, in collaboration with <a href="https://x.com/versa_virtual?ref_src=twsrc%5Etfw">@versa_virtual</a> present to you, <a href="https://x.com/hashtag/UNIVERSONA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSONA</a><br><br>💜🤍💛🩷❤️ <a href="https://t.co/VguuT5H45n">pic.twitter.com/VguuT5H45n</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2057296894729265368?ref_src=twsrc%5Etfw">May 21, 2026</a></blockquote>
-                </div>
-                <div class="scroll-item">
-                    <blockquote class="twitter-tweet"><p lang="in" dir="ltr">Perjalanan kecil menuju hari ulang tahun Mas Mas Jawa kesayangan kita akan dimulai!<br><br>Bagai sang pangeran yang berkelana mencari impiannya, SouRizu menjadi bintang yang selalu punya cara unik untuk menyinari hari-hari <a href="https://x.com/hashtag/Rizunauts?src=hash&amp;ref_src=twsrc%5Etfw">#Rizunauts</a> dan <a href="https://x.com/hashtag/UNIVERSA?src=hash&amp;ref_src=twsrc%5Etfw">#UNIVERSA</a> 🌙✨<a href="https://x.com/hashtag/ReveDeRizu?src=hash&amp;ref_src=twsrc%5Etfw">#ReveDeRizu</a> <a href="https://t.co/uXXdWAs1yV">pic.twitter.com/uXXdWAs1yV</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2029441596069167399?ref_src=twsrc%5Etfw">March 5, 2026</a></blockquote>
                 </div>
             </div>
 
