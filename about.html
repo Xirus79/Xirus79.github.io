@@ -102,19 +102,37 @@
         
             }
         }
-        /* =========================================
-           PENGATURAN KHUSUS UNTUK LAYAR HP
+       /* =========================================
+           5. PENGATURAN KHUSUS UNTUK LAYAR HP
+           (Ini yang membuat tampilan persis gambar Carrd Anda)
            ========================================= */
         @media (max-width: 600px) {
             body {
-                padding: 40px 15px; /* Mengurangi jarak di luar kotak putih */
+                /* Menghapus padding kiri-kanan di body agar kita bisa mengatur lebar kotak dengan persentase */
+                padding: 50px 0; 
             }
             .container {
-                width: 100%;
-                padding: 40px 25px; /* Melebarkan area teks di dalam kotak */
+                /* KUNCI 1: Lebar kotak dikecilkan jadi 82% agar menyisakan warna abu-abu yang lumayan tebal di kiri dan kanannya */
+                width: 82%; 
+                /* Jarak dari teks ke batas kotak putih disesuaikan */
+                padding: 40px 25px; 
             }
             .title {
-                font-size: 22px; /* Menyesuaikan ukuran judul */
+                /* KUNCI 2: Judul dikecilkan agar muat persis 1 baris seperti di gambar */
+                font-size: 16px; 
+                margin-bottom: 20px;
+            }
+            .content-text {
+                /* KUNCI 3: Teks bacaan dikecilkan menjadi sangat mungil persis seperti format Carrd di HP */
+                font-size: 11px; 
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+            .back-icon {
+                margin-top: 30px;
+            }
+            .back-icon a {
+                font-size: 20px; /* Ikon panah agak dikecilkan sedikit */
             }
         }
     </style>
