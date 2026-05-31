@@ -35,13 +35,13 @@
         .container {
             background-color: #ffffff;
             width: 100%;
-            /* Kotak dilebarkan menjadi 850px agar ada ruang luas untuk menggeser konten Twitter */
-            max-width: 850px; 
+            /* Kotak dilebarkan agar muat 2-3 tweet sekaligus di layar desktop */
+            max-width: 950px; 
             padding: 50px 60px 40px 60px; 
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
             box-sizing: border-box;
-            /* Memastikan konten yang keluar dari kotak putih tersembunyi dengan rapi */
+            /* Memastikan tidak ada konten yang bocor ke area abu-abu */
             overflow: hidden; 
         }
 
@@ -53,7 +53,7 @@
             font-size: 22px;
             font-weight: 700; 
             margin-top: 40px; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
             text-transform: uppercase; 
             letter-spacing: 0.5px;
             text-align: center;
@@ -68,11 +68,12 @@
            ========================================= */
         .scroll-container {
             display: flex;
-            gap: 20px; /* Jarak antar postingan Twitter */
-            overflow-x: auto; /* KUNCI: Membuatnya bisa digeser ke samping */
-            padding-bottom: 15px; /* Jarak bawah untuk scrollbar */
+            /* KUNCI: flex-wrap nowrap memaksa semua item berjejer ke samping, tidak boleh jatuh ke bawah */
+            flex-wrap: nowrap; 
+            gap: 20px; 
+            overflow-x: auto; 
+            padding-bottom: 15px; 
             
-            /* Agar pergeserannya mulus seperti aplikasi di HP */
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
@@ -95,15 +96,18 @@
            5. PENGATURAN SETIAP ITEM DI DALAM KOTAK GESER
            ========================================= */
         .scroll-item {
-            /* KUNCI: Menetapkan lebar tetap pada setiap kotak Twitter agar tidak menyusut */
+            /* KUNCI: Menetapkan lebar absolut pada setiap kotak Twitter agar tidak menyusut (320px) */
             flex: 0 0 320px; 
-            scroll-snap-align: center; /* Saat digeser, posisinya akan otomatis pas di tengah */
+            min-width: 320px;
+            align-self: flex-start; /* Menjaga tweet tetap di atas jika tingginya berbeda */
+            scroll-snap-align: center; 
             display: flex;
             justify-content: center;
         }
 
         /* Memaksa embed Twitter agar mengisi penuh lebar kotak */
-        .scroll-item .twitter-tweet {
+        .scroll-item .twitter-tweet,
+        .scroll-item iframe {
             width: 100% !important;
             margin: 0 !important;
         }
@@ -138,15 +142,16 @@
                 padding: 40px 0; 
             }
             .container {
-                width: 95%; /* Melebarkan kotak putih di layar HP */
+                width: 95%; 
                 padding: 40px 20px; 
             }
             .category-title {
                 font-size: 18px;
             }
             .scroll-item {
-                /* Di HP, lebar kotaknya dikecilkan jadi 280px agar user tahu bisa digeser */
+                /* Di HP, lebar kotaknya dikecilkan sedikit agar muat */
                 flex: 0 0 280px; 
+                min-width: 280px;
             }
             .back-icon {
                 margin-top: 30px;
@@ -190,9 +195,10 @@
         <h2 class="category-title">OTHER EVENTS</h2>
         
         <div class="scroll-container">
-            <!-- Item 1: Debut Anniversary -->
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One year since the veil dropped. <br><br>From melodies we craved to sharing laughs. He’s not just a star, he’s a friend we’ve all come to love 💜<br><br>Here we celebrate the untold story we can&#39;t wait to uncover. <br><br>Cheers to many more chapters!<br>Happy <a href="https://x.com/hashtag/AnniversEray?src=hash&amp;ref_src=twsrc%5Etfw">#AnniversEray</a> 🎉 <a href="https://t.co/5EPk0l5j89">pic.twitter.com/5EPk0l5j89</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1982325377419948399?ref_src=twsrc%5Etfw">October 26, 2025</a>
-            </blockquote>
+            <!-- Item 1: Debut Anniversary (Struktur sudah diperbaiki) -->
+            <div class="scroll-item">
+                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One year since the veil dropped. <br><br>From melodies we craved to sharing laughs. He’s not just a star, he’s a friend we’ve all come to love 💜<br><br>Here we celebrate the untold story we can&#39;t wait to uncover. <br><br>Cheers to many more chapters!<br>Happy <a href="https://x.com/hashtag/AnniversEray?src=hash&amp;ref_src=twsrc%5Etfw">#AnniversEray</a> 🎉 <a href="https://t.co/5EPk0l5j89">pic.twitter.com/5EPk0l5j89</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/1982325377419948399?ref_src=twsrc%5Etfw">October 26, 2025</a>
+                </blockquote>
             </div>
 
             <!-- Item 2: Charity -->
