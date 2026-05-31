@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#HatsumatsuRay - Anomalus Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           1. PENGATURAN LATAR BELAKANG
+           ========================================= */
+        body {
+            background-color: #8e9bb1; 
+            margin: 0;
+            padding: 50px 20px; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           2. PENGATURAN KOTAK PUTIH
+           ========================================= */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 650px; 
+            padding: 50px 60px 40px 60px; 
+            border-radius: 4px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+            box-sizing: border-box;
+        }
+
+        /* =========================================
+           3. PENGATURAN JUDUL & TEKS
+           ========================================= */
+        .title {
+            color: #1D357F; 
+            font-size: 22px;
+            font-weight: 700; 
+            text-align: center; 
+            margin-top: 0;
+            margin-bottom: 10px; 
+            letter-spacing: 1px; 
+        }
+
+        .description {
+            color: #1D357F; 
+            font-size: 13px; 
+            line-height: 1.6; 
+            text-align: center; 
+            margin-bottom: 30px; 
+        }
+
+        /* =========================================
+           4. PENGATURAN KOTAK EMBED TWITTER
+           ========================================= */
+        .embed-wrapper {
+            display: flex;
+            justify-content: center; /* Memastikan kotak Twitter berada tepat di tengah */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           5. PENGATURAN TOMBOL KEMBALI
+           ========================================= */
+        .back-icon {
+            display: block;
+            text-align: center; 
+            margin-top: 40px; 
+        }
+
+        .back-icon a {
+            color: #1D357F; 
+            font-size: 28px; 
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .back-icon a:hover {
+            color: #1a2a5a; 
+            transform: translateX(-5px); 
+        }
+
+        /* =========================================
+           6. PENGATURAN KHUSUS UNTUK LAYAR HP
+           ========================================= */
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 0; 
+            }
+            .container {
+                width: 90%; /* Dibuat sedikit lebih lebar dari About agar Embed Twitter muat dengan lega */
+                padding: 40px 20px; /* Padding kiri-kanan ditipiskan agar Twitter tidak terpotong */
+            }
+            .title {
+                font-size: 18px; 
+            }
+            .description {
+                font-size: 11.5px; 
+            }
+            .back-icon {
+                margin-top: 30px;
+            }
+            .back-icon a {
+                font-size: 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- JUDUL PROYEK -->
+        <h1 class="title">#HatsumatsuRay</h1>
+        <p class="description">Dokumentasi perayaan ulang tahun member VERSA.</p>
+
+        <!-- KOTAK EMBED TWITTER 1 -->
+        <div class="embed-wrapper">
+            <!-- GANTI KODE BLOCKQUOTE DI BAWAH INI DENGAN KODE EMBED MILIKMU -->
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">As the year turns, his presence unfolds beneath luminous skies, fireworks, and quiet magic. Some moments are meant to glow softly ✨️💜<a href="https://x.com/hashtag/HatsumatsuRay?src=hash&amp;ref_src=twsrc%5Etfw">#HatsumatsuRay</a><a href="https://x.com/hashtag/BirthRayParty?src=hash&amp;ref_src=twsrc%5Etfw">#BirthRayParty</a> <a href="https://t.co/6cBPz1Hxw5">pic.twitter.com/6cBPz1Hxw5</a></p>&mdash; Anomin-chan 🎺🥁 (@AnomalusProject) <a href="https://x.com/AnomalusProject/status/2005082064060809461?ref_src=twsrc%5Etfw">December 28, 2025</a>
+            </blockquote>  
+        </div>
+
+        <!-- SCRIPT TWITTER (Cukup satu script saja di bawah semua blockquote) -->
+        <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+        <!-- IKON BACK (KEMBALI KE HALAMAN PORTO DAFTAR MENU) -->
+        <div class="back-icon">
+            <a href="porto.html" title="Kembali ke Portofolio"><i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
